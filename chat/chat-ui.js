@@ -24,10 +24,10 @@ const CSS = `
 
 /* 상담 아이콘 */
 .ecw-launch{position:fixed;right:max(20px,env(safe-area-inset-right));bottom:max(20px,env(safe-area-inset-bottom));z-index:900;
-  width:60px;height:60px;border-radius:50%;border:0;cursor:pointer;background:var(--c-cta);color:#fff;display:grid;place-items:center;
-  box-shadow:0 12px 30px -8px rgba(8,117,209,.55),0 2px 6px rgba(0,0,0,.12);transition:transform .25s cubic-bezier(.2,.75,.25,1),box-shadow .25s,opacity .2s;}
-.ecw-launch:hover{transform:translateY(-2px) scale(1.04);box-shadow:0 16px 34px -8px rgba(8,117,209,.6),0 2px 6px rgba(0,0,0,.12);}
-.ecw-launch:focus-visible{outline:3px solid rgba(16,136,237,.45);outline-offset:3px;}
+  width:60px;height:60px;border-radius:50%;border:0;cursor:pointer;background:var(--c-navy);color:#fff;display:grid;place-items:center;
+  box-shadow:0 12px 30px -8px rgba(9,20,42,.5),0 2px 6px rgba(0,0,0,.16);transition:transform .25s cubic-bezier(.2,.75,.25,1),box-shadow .25s,opacity .2s;}
+.ecw-launch:hover{transform:translateY(-2px) scale(1.04);box-shadow:0 16px 34px -8px rgba(9,20,42,.56),0 2px 6px rgba(0,0,0,.16);}
+.ecw-launch:focus-visible{outline:3px solid rgba(23,43,77,.45);outline-offset:3px;}
 .ecw-launch svg{width:28px;height:28px;transition:transform .3s,opacity .2s;}
 .ecw-launch .ecw-ic-x{position:absolute;opacity:0;transform:rotate(-90deg);}
 .ecw.open .ecw-launch .ecw-ic-chat{opacity:0;transform:rotate(90deg);}
