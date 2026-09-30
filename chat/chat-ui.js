@@ -24,11 +24,23 @@ const CSS = `
 
 /* 상담 아이콘 */
 .ecw-launch{position:fixed;right:max(20px,env(safe-area-inset-right));bottom:max(20px,env(safe-area-inset-bottom));z-index:900;
-  width:60px;height:60px;border-radius:50%;border:1px solid var(--c-line);cursor:pointer;background:var(--c-surface);color:var(--c-cta);display:grid;place-items:center;
-  box-shadow:0 14px 30px -10px rgba(15,30,60,.28),0 2px 8px rgba(15,30,60,.08);transition:transform .25s cubic-bezier(.2,.75,.25,1),box-shadow .25s,opacity .2s;}
+  width:60px;height:60px;padding:0;border-radius:50%;border:1px solid var(--c-line);cursor:pointer;background:var(--c-surface);color:var(--c-cta);
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  box-shadow:0 14px 30px -10px rgba(15,30,60,.28),0 2px 8px rgba(15,30,60,.08);transition:transform .25s cubic-bezier(.2,.75,.25,1),box-shadow .25s,opacity .2s,width .2s,padding .2s;}
 .ecw-launch:hover{transform:translateY(-2px) scale(1.04);box-shadow:0 18px 36px -10px rgba(15,30,60,.32),0 2px 8px rgba(15,30,60,.1);}
 .ecw-launch:focus-visible{outline:3px solid rgba(16,136,237,.35);outline-offset:3px;}
-.ecw-launch svg{width:28px;height:28px;transition:transform .3s,opacity .2s;}
+.ecw-launch .ecw-label{display:none;}
+.ecw-launch svg{width:26px;height:26px;flex-shrink:0;transition:transform .3s,opacity .2s;}
+@media (min-width:901px){
+  .ecw-launch{width:auto;height:64px;padding:0 24px 0 20px;border-radius:100px;box-shadow:0 16px 34px -10px rgba(15,30,60,.3),0 3px 10px rgba(15,30,60,.1);}
+  .ecw-launch:hover{box-shadow:0 20px 40px -10px rgba(15,30,60,.34),0 3px 10px rgba(15,30,60,.12);}
+  .ecw-launch svg{width:24px;height:24px;}
+  .ecw-launch .ecw-label{display:inline-block;font-size:.94rem;font-weight:800;color:var(--c-ink);white-space:nowrap;letter-spacing:-.01em;}
+  .ecw.open .ecw-launch .ecw-label{display:none;}
+  .ecw.open .ecw-launch{width:64px;padding:0;}
+  .ecw:not(.open) .ecw-launch .ecw-dot{left:34px;right:auto;bottom:15px;}
+  .ecw:not(.open) .ecw-launch .ecw-badge{left:30px;right:auto;top:9px;}
+}
 .ecw-launch .ecw-ic-x{position:absolute;opacity:0;transform:rotate(-90deg);}
 .ecw.open .ecw-launch .ecw-ic-chat{opacity:0;transform:rotate(90deg);}
 .ecw.open .ecw-launch .ecw-ic-x{opacity:1;transform:none;}
@@ -170,7 +182,7 @@ root.innerHTML = `
     </div>
   </div>
   <button class="ecw-launch" type="button" aria-label="실시간 상담 열기" aria-expanded="false">
-    ${I.chat}${I.x}<span class="ecw-dot"></span><span class="ecw-badge">1</span>
+    ${I.chat}${I.x}<span class="ecw-label">상담하기</span><span class="ecw-dot"></span><span class="ecw-badge">1</span>
   </button>`;
 document.body.appendChild(root);
 
