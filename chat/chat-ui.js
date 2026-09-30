@@ -17,8 +17,8 @@ const CSS = `
   font-family:var(--kr,"Pretendard Variable","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif);
   -webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:anywhere;}
 .ecw *{box-sizing:border-box;}
-.ecw div,.ecw p,.ecw span,.ecw img{margin:0;}
-.ecw img{display:inline-block;max-width:none;}
+.ecw :where(div,p,span,img){margin:0;}
+.ecw :where(img){display:inline-block;max-width:none;}
 .ecw button{font-family:inherit;}
 [data-theme="dark"] .ecw{--c-cta:#1777D6;}
 
@@ -86,9 +86,9 @@ const CSS = `
 .ecw-note{margin:10px auto 12px;max-width:92%;text-align:center;font-size:.76rem;line-height:1.5;color:var(--c-soft);
   background:var(--c-surface);border:1px dashed var(--c-line);border-radius:12px;padding:9px 12px;}
 
-.ecw-chips{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 4px 36px;}
+.ecw-chips{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 6px 36px;}
 .ecw-chips button{border:1px solid rgba(16,136,237,.35);background:var(--c-surface);color:var(--c-accent);border-radius:100px;
-  padding:7px 12px;font-size:.78rem;font-weight:700;cursor:pointer;transition:background .2s;}
+  padding:7px 13px;font-size:.78rem;font-weight:600;line-height:1.35;cursor:pointer;transition:background .2s,border-color .2s;}
 .ecw-chips button:hover{background:rgba(16,136,237,.08);}
 
 .ecw-card{margin:10px 0 12px 36px;background:var(--c-surface);border:1px solid var(--c-line);border-radius:14px;padding:12px;}
